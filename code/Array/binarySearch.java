@@ -36,3 +36,5 @@ public class binarySearch{
         }
     }
 }
+
+// Time Complexity = log(n)
