@@ -2,6 +2,9 @@ public class subarrays{
 
     public static void printSubarrays(int data[]){
         int ts = 0;
+        int maxSum = Integer.MIN_VALUE;
+        int minSum = Integer.MAX_VALUE;
+        int sum = 0;
         //outer loop:
         for(int i=0; i<data.length; i++){
             int start = i;
@@ -12,13 +15,22 @@ public class subarrays{
                 System.out.print("[");
                 for(int k=start; k<=end; k++){
                     System.out.print(" "+data[k]+" ");
+                    sum = sum + data[k];
+                }
+                System.out.print("] ");
+                if(maxSum < sum){
+                    maxSum = sum;
+                }
+                if(minSum > sum){
+                    minSum = sum;
                 }
                 ts++;
-                System.out.print("] ");
             }
             System.out.println();
         }
         System.out.println("Total Subarrays: "+ts);
+        System.out.println("The Max value of sum is: "+maxSum);
+        System.out.println("The Min value of sum is: "+minSum);
         return;
     }
 
