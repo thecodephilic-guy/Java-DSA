@@ -4,13 +4,13 @@ public class subarrays{
         int ts = 0;
         //outer loop:
         for(int i=0; i<data.length; i++){
-            System.out.print("[ "+data[i]+" ] ");
-            ts++;
+            int start = i;
             //inner loop:
-            for(int j=i+1; j<data.length; j++){
+            for(int j=i; j<data.length; j++){
+                int end = j;
                 //loop for printing:
                 System.out.print("[");
-                for(int k=i; k<=j; k++){
+                for(int k=start; k<=end; k++){
                     System.out.print(" "+data[k]+" ");
                 }
                 ts++;
