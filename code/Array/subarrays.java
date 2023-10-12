@@ -20,12 +20,12 @@ public class subarrays{
         int ts = 0;
         int maxSum = Integer.MIN_VALUE;
         int minSum = Integer.MAX_VALUE;
-        int sum = 0;
         //outer loop:
         for(int i=0; i<data.length; i++){
             int start = i;
             //inner loop:
             for(int j=i; j<data.length; j++){
+                int sum = 0;    
                 int end = j;
                 //loop for printing:
                 System.out.print("[");
