@@ -12,7 +12,11 @@
 				"VisualStudioExptTeam.vscodeintellicode",
 				"vscjava.vscode-java-debug",
 				"GitHub.github-vscode-theme"
-			]
+			],
+			"settings": {
+				"terminal.integrated.fontSize": 24,
+				"editor.wordWrap": "on"
+			}
 		}
 	}
 }
