@@ -7,7 +7,7 @@
  */
 
 import java.util.Arrays;
-import java.util.collections;
+import java.util.Collections;
 
 public class inbuiltSort {
 
@@ -18,6 +18,14 @@ public class inbuiltSort {
         System.out.println();
     }
 
+    //writing another printing fucntion for Integer object type
+    public static void printArrayOb(Integer arr[]){
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
+    
     public static void main(String[] args) {
         int arr[] = {5, 4, 1, 3, 2};
 
@@ -32,9 +40,10 @@ public class inbuiltSort {
         Arrays.sort(anotherArr, 0, 3);      //(arr, starting index, ending index exclusive)
         printArray(anotherArr);             //output: 1 4 5 3 2 (1 4 5 being sorted and 3 2 are as it is)
 
+        Integer newArr[] = {5, 4, 1, 3, 2};
         //now if we want to sort an array in descending order then we have to make the use of collections:
-        Arrays.sort(anotherArr, collectons.reverseOrder());
-        printArray(anotherArr);
-        
+        Arrays.sort(newArr, Collections.reverseOrder());    //reverseOrder() always works on the objects so we need to define the array which we are sorting as an Integer object type
+        System.out.println("The descending order sorted array is: ");
+        printArrayOb(newArr);       //output: 5 4 3 2 1
     }
 }
