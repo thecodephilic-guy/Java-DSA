@@ -14,7 +14,7 @@ public class dublicateElement {
 
     //Approach 2 (Time Complexiety = O(n))
     public static boolean checkDup(int nums[]){
-       
+       return true;
     }
 
     public static void main(String[] args) {
