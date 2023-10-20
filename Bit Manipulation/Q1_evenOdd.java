@@ -9,18 +9,21 @@
  * We can make the use of Bitwise AND &. Let's see how:
  */
 
-import java.util.Scanner;
-
 public class Q1_evenOdd {
 
     public static void oddEven(int number){
-
+        int bitMask = 1;
+        if((number & bitMask) == 0){
+            System.out.println("The number is even.");
+        }
+        else{
+            System.out.println("The number is odd.");
+        }
     }
     public static void main(String[] args) {
-        Scanner sc =  new Scanner(System.in);
-        System.out.println("Enter a number: ");
-        sc.close();
-        int number = sc.nextInt();
-        
+
+        oddEven(2);
+        oddEven(11);
+        oddEven(3);
     }
 }
