@@ -19,7 +19,7 @@ public class Q3_powerOfTwo {
     //     }
     // }
 
-        //The above code can alos be written in one line:
+        //The above code can alos be written in one line: :)
         return (n & (n-1)) == 0;
     }
     public static void main(String[] args) {
