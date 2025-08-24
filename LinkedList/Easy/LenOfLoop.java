@@ -1,6 +1,4 @@
 package LinkedList.Easy;
-import java.util.HashMap;
-import java.util.Map;
 
 import LinkedList.Node;
 
@@ -8,20 +6,29 @@ public class LenOfLoop {
     public static int lengthOfLoop(Node head){
         if(head == null || head.next == null) return 0;
 
-        Map<Node, Integer> map = new HashMap<>();
-        Node temp = head;
-        int timer = 0;
+        //finding the loop:
+        Node slow = head, fast = head;
 
-        while(temp != null){
-            if(!map.containsKey(temp)){
-                map.put(temp, ++timer);
-                temp = temp.next;
-            }else{
-                //temp is the starting point of the loop
-                return timer - map.get(temp);
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast){   //loop found
+                //calculating length of the loop:
+                int count = 1;
+                fast = fast.next;
+
+                while(fast != slow){
+                    count++;
+                    fast = fast.next;
+                }
+
+                return count;
             }
         }
+
         return 0;
+
     }
     public static void main(String[] args) {
         // Create a linked list with a loop
