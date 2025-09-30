@@ -1,3 +1,4 @@
 {
-    "editor.mouseWheelZoom": true
+    "editor.mouseWheelZoom": true,
+    "docker.languageserver.diagnostics.instructionJSONInSingleQuotes": "warning"
 }
