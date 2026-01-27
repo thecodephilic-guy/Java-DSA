@@ -50,5 +50,45 @@ public class bitManipulation {
         //Binary Right Shift >>
         System.out.println(5 >> 2); //output: 1
         //Direct formula for calculations: a >> b = a / 2 raised to the power b
+        System.out.println();
+        System.out.println();
+
+        Solution sol = new Solution();
+        System.out.println("Bruteforce check for ith Bit: "+ sol.checkIthBit(5, 0));
+        System.out.println("Optimized check for ith Bit: "+ sol.checkIthBit2(5, 1));
+        System.out.println("Is 3 odd? : "+ sol.isOdd(3));
+        System.out.println("Is 4 odd? : "+ sol.isOdd(4));
     }
+}
+
+class Solution {
+
+    //the bruteforce approach: O(log n)
+    public boolean checkIthBit(int n, int i){
+        String binary = Integer.toBinaryString(n);
+
+        if(i >= binary.length()) return false;
+
+        return binary.charAt(binary.length()-1-i) == '1';
+    }
+
+    //the optimized approach: O(1)
+    public boolean checkIthBit2(int n, int i){
+        int mask = 1 << i;
+
+        return (n & mask) != 0;
+    }
+
+    //TC - O(1)
+    public boolean isOdd(int num){
+        //using the fact binary representation of all the odd numbers has 1 as LSB:
+        //so we can use 1 as mask
+        //XOR of a number with 1 increase the number by 1 if it is even and decrease the number by 1 if
+        //the number is odd
+        int newNum = num ^ 1;
+        return newNum == num-1;
+
+        //return num^1 == num-1;  (one line code)
+    }
+    
 }
